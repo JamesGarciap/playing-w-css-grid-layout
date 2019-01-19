@@ -4,11 +4,19 @@ body {
 
 .container {
   display: grid;
-  grid-template: 50px 100px / 30% 30% 30%;
-  grid-gap: 20px 10px;
+  grid-template: repeat(4, 100px) / repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
 .item {
-  background: lightblue;
-  border: 1px solid red;
+  border: 2px solid orange;
+  border-radius: 5px;
+}
+
+.item:nth-child(even) {
+  background: #CCC
+}
+
+.item:nth-child(odd) {
+  background: #FFF
 }

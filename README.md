@@ -6,8 +6,11 @@
 
 ### Useful links
 
-* https://css-tricks.com/snippets/css/complete-guide-grid/
-* https://www.w3schools.com/css/css_grid.asp
+* [CSS-TRICKS: A Complete Guide to Grid
+](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [W3Schools grid layout](https://www.w3schools.com/css/css_grid.asp)
+* [CSS-TRICKS: Introduction to fr css unit](https://css-tricks.com/introduction-fr-css-unit/)
+* [CSS-TRICKS: Lengths of css](https://css-tricks.com/the-lengths-of-css/)
 
 ### Some docs:
 
@@ -70,5 +73,36 @@ However it is possible to use a single property to group them, which is called `
   grid-gap: 10px 20px;
               ^    ^
             rows  columns
+}
+```
+
+### CSS functions:
+***repeat(times, length):***
+You can use repeat to avoid writing the same value as times as columns you want to have in your grid so instead of define:
+```
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+```
+you can simplify it this way:
+```
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+}
+```
+```
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+```
+***minmax(min, max)***
+This function lets you to define a minimum and maximum value for the property which implements it, so that for example a column will keep it's width as min or max as you pass as parameters when call it.
+```
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
 }
 ```
