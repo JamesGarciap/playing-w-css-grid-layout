@@ -12,7 +12,7 @@
 * [CSS-TRICKS: Introduction to fr css unit](https://css-tricks.com/introduction-fr-css-unit/)
 * [CSS-TRICKS: Lengths of css](https://css-tricks.com/the-lengths-of-css/)
 
-### Some docs:
+### Properties:
 
 ***Grid Definition:*** You can define a css grid by using `grid` as value of the display property of a given container:
 
@@ -73,6 +73,43 @@ However it is possible to use a single property to group them, which is called `
   grid-gap: 10px 20px;
               ^    ^
             rows  columns
+}
+```
+
+### Working with areas:
+CSS grid layout is able to understand areas so that you can divide you layout into the pieces that makes more the sense for you design composition. This is possible by using a combination of `grid-template-areas` and `grid-area`.
+
+Let's define some areas for a common layout.
+
+```
+.container {
+  display: grid;
+  grid-template: 150px 1fr 200px / 200px 1fr;
+  grid-gap: 10px;
+  grid-template-areas: "header header"
+                       "left content"
+                       "footer footer";
+  height: 100vh;
+}
+```
+
+Now with the areas defined we can define the selectors with will match with each area.
+
+```
+.header {
+  grid-area: header;
+}
+
+.left {
+  grid-area: left;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
 }
 ```
 

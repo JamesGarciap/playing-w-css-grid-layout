@@ -1,11 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial;
 }
 
 .container {
   display: grid;
-  grid-template: repeat(4, 100px) / repeat(3, 1fr);
+  grid-template: 100px 1fr 150px / 200px 1fr;
   grid-gap: 10px;
+  grid-template-areas: "header header"
+                       "left content"
+                       "footer footer";
+  height: 100vh;
 }
 
 .item {
@@ -19,4 +27,20 @@ body {
 
 .item:nth-child(odd) {
   background: #FFF
+}
+
+.header {
+  grid-area: header;
+}
+
+.left {
+  grid-area: left;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
 }
